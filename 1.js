@@ -7,6 +7,7 @@ const openBtn = document.querySelector(".btn-eshan");
 if (registerLink) {
   registerLink.addEventListener("click", (e) => {
     e.preventDefault();
+    authWrapper.classList.add("open");
     authWrapper.classList.add("active");
   });
 }
@@ -14,6 +15,7 @@ if (registerLink) {
 if (loginLink) {
   loginLink.addEventListener("click", (e) => {
     e.preventDefault();
+    authWrapper.classList.add("open");
     authWrapper.classList.remove("active");
   });
 }
@@ -21,16 +23,21 @@ if (loginLink) {
 if (closeAuth) {
   closeAuth.addEventListener("click", () => {
     authWrapper.classList.remove("active");
+    authWrapper.classList.remove("open");
   });
 }
 
 if (openBtn) {
   openBtn.addEventListener("click", () => {
+    authWrapper.classList.add("open");
     authWrapper.classList.remove("active");
     authWrapper.scrollIntoView({ behavior: "smooth", block: "center" });
   });
 }
 
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") authWrapper.classList.remove("active");
+  if (e.key === "Escape") {
+    authWrapper.classList.remove("active");
+    authWrapper.classList.remove("open");
+  }
 });

@@ -94,6 +94,19 @@ header {
   display: flex;
   justify-content: center; /*content eka center kara*/
   align-items: center; /*all items box eke center karanawa*/
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px) scale(0.98);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s;
+}
+
+.Wrapper.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
 }
 .Wrapper .form-blogin {
   width: 100%;
