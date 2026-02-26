@@ -21,11 +21,33 @@ if (loginLink) {
 }
 
 if (closeAuth) {
-  closeAuth.addEventListener("click", () => {
+  closeAuth.addEventListener("click", (e) => {
+    e.preventDefault();
     authWrapper.classList.remove("active");
     authWrapper.classList.remove("open");
   });
+
+  // also ensure clicking the inner icon closes the popup
+  const closeIcon = closeAuth.querySelector("i");
+  if (closeIcon) {
+    closeIcon.addEventListener("click", (e) => {
+      e.preventDefault();
+      authWrapper.classList.remove("active");
+      authWrapper.classList.remove("open");
+    });
+  }
 }
+
+// fallback: close when clicking the close element or its children (robust)
+document.addEventListener("click", (e) => {
+  const target = e.target;
+  if (!authWrapper) return;
+  // if the click is on the close control (or its child), close
+  if (target.closest && target.closest("#closeAuth")) {
+    authWrapper.classList.remove("active");
+    authWrapper.classList.remove("open");
+  }
+});
 
 if (openBtn) {
   openBtn.addEventListener("click", () => {
