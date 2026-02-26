@@ -296,3 +296,21 @@ header {
   transform: translateX(0);
   z-index: 3;
 }
+
+.Wrapper .form-blogin.forgot {
+  transform: translateX(420px);
+  z-index: 1;
+}
+
+.Wrapper.show-forgot .form-blogin.forgot {
+  transform: translateX(0);
+  z-index: 4;
+}
+
+.Wrapper.show-forgot .form-blogin.login {
+  transform: translateX(-420px);
+}
+
+.verify-section .input-box {
+  margin-bottom: 15px;
+}

@@ -48,7 +48,7 @@
 
         <div class="remember-forgot">
           <label><input type="checkbox" />Remember Me</label>
-          <a href="#">Forgot Password</a>
+          <a href="#" class="forgot-link">Forgot Password</a>
         </div>
 
         <button type="submit" class="btton2">Login</button>
@@ -92,6 +92,39 @@
           <p>
             Already have an account? <a href="#" class="login-link">Login</a>
           </p>
+        </div>
+      </div>
+
+      <div class="form-blogin forgot">
+        <h2>Forgot Password</h2>
+
+        <div class="input-box">
+          <span class="icon">
+            <i class="fa-solid fa-envelope"></i>
+          </span>
+          <input type="email" required id="forgotEmail" />
+          <label for="forgotEmail">Enter your email</label>
+        </div>
+
+        <button type="button" class="btton2" id="sendCode">
+          Send Verification Code
+        </button>
+
+        <div
+          class="verify-section"
+          id="verifySection"
+          style="display: none; margin-top: 16px"
+        >
+          <div class="input-box">
+            <span class="icon"><i class="fa-solid fa-key"></i></span>
+            <input type="text" id="verificationCode" />
+            <label for="verificationCode">Verification Code</label>
+          </div>
+          <button type="button" class="btton2" id="verifyCode">Verify</button>
+        </div>
+
+        <div class="login-register" style="margin-top: 12px">
+          <p>Back to <a href="#" class="login-link">Login</a></p>
         </div>
       </div>
     </div>
